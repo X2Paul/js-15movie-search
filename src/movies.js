@@ -33,7 +33,7 @@ const inputSearchHandler = e => {
     if ((searchString.length < 4 && year === '') || searchString === searchLast) return
     if (!triggerMode) clearMoviesMarkup()
 
-    const apiUrl = `http://www.omdbapi.com/?apikey=5d4c229f&s=${searchString}&y=${year}`;
+    const apiUrl = `https://www.omdbapi.com/?apikey=5d4c229f&s=${searchString}&y=${year}`;
 
     getData(apiUrl)
       .then(data => data.forEach(movie => addMovieToList(movie)))
@@ -51,7 +51,7 @@ const yearInputHandler = () => {
     if ((year.length < 4 && searchString === '') || year === searchLast) return;
     if (!triggerMode) clearMoviesMarkup();
 
-    const apiUrl = `http://www.omdbapi.com/?apikey=5d4c229f&s=${searchString}&y=${year}`;
+    const apiUrl = `https://www.omdbapi.com/?apikey=5d4c229f&s=${searchString}&y=${year}`;
 
     getData(apiUrl)
       .then(data => data.forEach(movie => addMovieToList(movie)))
